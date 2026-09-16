@@ -1,6 +1,10 @@
 FROM python:3.13-slim
 
-RUN pip install --no-cache-dir zensical
+RUN apt-get update && apt-get install -y --no-install-recommends git \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN pip install --no-cache-dir zensical \
+    && pip install --no-cache-dir git+https://github.com/squidfunk/mike.git
 
 WORKDIR /docs
 

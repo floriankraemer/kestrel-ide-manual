@@ -15,3 +15,16 @@ services:
       - .:/docs
     command: ["zensical", "build"]
     profiles: ["build"]
+
+  # Runs mike (git+github.com/squidfunk/mike, the Zensical-compatible fork)
+  # for versioned deploys, e.g.:
+  #   docker compose run --rm docs-version mike deploy --push --update-aliases 2 latest
+  #   docker compose run --rm docs-version mike set-default --push latest
+  #   docker compose run --rm docs-version mike list
+  docs-version:
+    build: .
+    user: "${UID:-1000}:${GID:-1000}"
+    volumes:
+      - .:/docs
+      - ${HOME}/.gitconfig:/etc/gitconfig:ro
+    profiles: ["version"]

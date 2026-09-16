@@ -1,14 +1,14 @@
 [project]
-site_url = "https://www.example.com/"
-site_name = "Documentation"
-# site_description = "Your project description"
+site_url = "https://floriankraemer.github.io/kestrel-ide-manual/"
+site_name = "Kestrel IDE Manual"
+site_description = "User manual and documentation for Kestrel IDE"
 # site_author = "Your name"
 
 # copyright = "Copyright &copy; 2026 Your name"
 
-# repo_url = "https://github.com/user/repo"
-# repo_name = "user/repo"
-# edit_uri = "edit/main/docs/"
+repo_url = "https://github.com/floriankraemer/kestrel-ide"
+repo_name = "floriankraemer/kestrel-ide"
+edit_uri = "edit/main/docs/"
 
 nav = [
   { "Get started" = "index.md" },
@@ -78,13 +78,12 @@ scheme = "slate"
 toggle.icon = "lucide/moon"
 toggle.name = "Switch to system preference"
 
-# [[project.extra.social]]
-# icon = "fontawesome/brands/github"
-# link = "https://github.com/user/repo"
+[project.extra.version]
+provider = "mike"
 
-# [[project.extra.social]]
-# icon = "fontawesome/brands/mastodon"
-# link = "https://fosstodon.org/@user"
+[[project.extra.social]]
+icon = "fontawesome/brands/github"
+link = "https://github.com/floriankraemer/kestrel-ide"
 
 [project.markdown_extensions]
 abbr = {}
