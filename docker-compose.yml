@@ -1,0 +1,17 @@
+services:
+  docs:
+    build: .
+    user: "${UID:-1000}:${GID:-1000}"
+    volumes:
+      - .:/docs
+    ports:
+      - "8000:8000"
+    command: ["zensical", "serve", "--dev-addr", "0.0.0.0:8000"]
+
+  docs-build:
+    build: .
+    user: "${UID:-1000}:${GID:-1000}"
+    volumes:
+      - .:/docs
+    command: ["zensical", "build"]
+    profiles: ["build"]
